@@ -12,7 +12,7 @@ from mmdet.datasets import build_dataset
 from mmdet.models import build_detector
 
 config_file = '../configs/ttfnet/ttfnet_d53_2x_hat.py' # 网络配置文件
-work_dir = '../checkpoints/work_dir' # 模型文件保存地址
+work_dir = '../../drive/My Drive/checkpoints/work_dir' # 模型文件保存地址
 # resume = '../checkpoints/work_dir/epoch_50.pth'
 resume = None
 def parse_args():

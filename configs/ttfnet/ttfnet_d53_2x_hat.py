@@ -115,7 +115,7 @@ total_epochs = 50
 device_ids = range(8)
 dist_params = dict(backend='nccl')
 log_level = 'INFO'
-work_dir = 'work_dirs/ttfnet53_2x'
+work_dir = '../../drive/My Drive/work_dirs/ttfnet53_2x'
 load_from = None
 resume_from = None
 workflow = [('train', 1)]
