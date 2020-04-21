@@ -11,9 +11,10 @@ from mmdet.apis import (get_root_logger, init_dist, set_random_seed,
 from mmdet.datasets import build_dataset
 from mmdet.models import build_detector
 
-config_file = '../configs/ttfnet/ttfnet_r18_2x_hat.py' # 网络配置文件
+config_file = '../configs/ttfnet/ttfnet_d53_2x_hat.py' # 网络配置文件
 work_dir = '../checkpoints/work_dir' # 模型文件保存地址
-resume = '../checkpoints/work_dir/epoch_50.pth'
+# resume = '../checkpoints/work_dir/epoch_50.pth'
+resume = None
 def parse_args():
     parser = argparse.ArgumentParser(description='Train a detector')
     parser.add_argument('--config', default=config_file , help='train config file path')
