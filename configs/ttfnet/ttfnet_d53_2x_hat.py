@@ -19,7 +19,7 @@ model = dict(
         wh_conv=64,
         hm_head_conv_num=2,
         wh_head_conv_num=2,
-        num_classes=2,
+        num_classes=3,
         wh_offset_base=16,
         wh_agnostic=True,
         wh_gaussian=True,
@@ -92,7 +92,7 @@ data = dict(
         img_prefix=data_root + 'VOC2007/',
         pipeline=test_pipeline))
 # optimizer
-optimizer = dict(type='SGD', lr=0.0025, momentum=0.9, weight_decay=0.0001,
+optimizer = dict(type='SGD', lr=0.0025, momentum=0.9, weight_decay=0.0004,
                  paramwise_options=dict(bias_lr_mult=2., bias_decay_mult=0.))
 optimizer_config = dict(grad_clip=dict(max_norm=35, norm_type=2))
 # learning policy
@@ -111,8 +111,8 @@ log_config = dict(
     ])
 # yapf:enable
 # runtime settings
-total_epochs = 24
-device_ids = range(1)
+total_epochs = 50
+device_ids = range(8)
 dist_params = dict(backend='nccl')
 log_level = 'INFO'
 work_dir = 'work_dirs/ttfnet53_2x'
