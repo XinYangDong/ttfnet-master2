@@ -1,7 +1,7 @@
 # model settings
 model = dict(
     type='TTFNet',
-    pretrained='./pretrain/darknet53.pth',
+    pretrained='../../drive/My Drive/checkpoints/darknet53.pth',
     backbone=dict(
         type='DarknetV3',
         layers=[1, 2, 8, 8, 4],
@@ -69,7 +69,7 @@ test_pipeline = [
 ]
 data = dict(
     imgs_per_gpu=8,
-    workers_per_gpu=2,
+    workers_per_gpu=8,
     train=dict(
         type='RepeatDataset',
         times=3,
@@ -92,7 +92,7 @@ data = dict(
         img_prefix=data_root + 'VOC2007/',
         pipeline=test_pipeline))
 # optimizer
-optimizer = dict(type='SGD', lr=0.0025, momentum=0.9, weight_decay=0.0004,
+optimizer = dict(type='SGD', lr=0.00025, momentum=0.9, weight_decay=0.0004,
                  paramwise_options=dict(bias_lr_mult=2., bias_decay_mult=0.))
 optimizer_config = dict(grad_clip=dict(max_norm=35, norm_type=2))
 # learning policy
@@ -102,7 +102,7 @@ lr_config = dict(
     warmup_iters=500,
     warmup_ratio=1.0 / 5,
     step=[18, 22])
-checkpoint_config = dict(interval=1)
+checkpoint_config = dict(interval=1,create_symlink=False)
 log_config = dict(
     interval=10,
     hooks=[

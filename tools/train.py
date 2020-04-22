@@ -13,8 +13,7 @@ from mmdet.models import build_detector
 
 config_file = '../configs/ttfnet/ttfnet_d53_2x_hat.py' # 网络配置文件
 work_dir = '../../drive/My Drive/checkpoints/work_dir' # 模型文件保存地址
-# resume = '../checkpoints/work_dir/epoch_50.pth'
-resume = None
+resume = '../../drive/My Drive/checkpoints/work_dir/epoch_2.pth'
 def parse_args():
     parser = argparse.ArgumentParser(description='Train a detector')
     parser.add_argument('--config', default=config_file , help='train config file path')
@@ -28,7 +27,7 @@ def parse_args():
     parser.add_argument(
         '--gpus',
         type=int,
-        default=0,
+        default=1,
         help='number of gpus to use '
         '(only applicable to non-distributed training)')
     parser.add_argument('--seed', type=int, default=None, help='random seed')
