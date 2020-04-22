@@ -102,7 +102,7 @@ lr_config = dict(
     warmup_iters=500,
     warmup_ratio=1.0 / 5,
     step=[18, 22])
-checkpoint_config = dict(interval=1,create_symlink=False)
+checkpoint_config = dict(interval=1)
 log_config = dict(
     interval=10,
     hooks=[
