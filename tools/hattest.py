@@ -10,10 +10,10 @@ import cv2
 
 if __name__ == '__main__':
 
-    # config_file = '../configs/ttfnet/ttfnet_re_1x_hat.py' # 网络配置文件
-    config_file = '../configs/ttfnet/ttfnet_d53_2x_hat.py'
+    config_file = '../configs/ttfnet/ttfnet_re_1x_hat.py' # 网络配置文件
+    #config_file = '../configs/ttfnet/ttfnet_d53_2x_hat.py'
     # checkpoint_file = '../checkpoints/work_dir/epoch_50.pth' # 刚刚下载的模型文件地址
-    checkpoint_file = '../checkpoints/epoch_5.pth'
+    checkpoint_file = '../checkpoints/epoch_50.pth'
     # build the model from a config file and a checkpoint file
 
     model = init_detector(config_file, checkpoint_file, device='cuda:0')
@@ -25,7 +25,7 @@ if __name__ == '__main__':
 
     #print((model))
     #test a single image and show the results
-    img = '../../ttfnet-master2/ttfnet-master/data/hat/VOC2007/JPEGImages/000003.jpg' # 测试图像地址
+    img = '../../ttfnet-master2/ttfnet-master/data/hat/VOC2007/JPEGImages/000006.jpg' # 测试图像地址
     # or img = mmcv.imread(img), which will only load it once
 
     result = inference_detector(model, img)
